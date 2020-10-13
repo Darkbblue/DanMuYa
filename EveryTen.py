@@ -17,10 +17,10 @@ def print_list(lis):
 	print() # 空行
 
 if __name__ == '__main__':
-	room_id = '457186' # 直播间序号
+	room_id = '508109' # 直播间序号
 	url = 'https://api.live.bilibili.com/xlive/web-room/v1/dM/gethistory?roomid=' + room_id # API
 	last_li = json.loads(requests.get(url).text)["data"]["room"] # 获取初始弹幕列表
-	print_list(last_li, 9) # 打印初始弹幕
+	print_list(last_li) # 打印初始弹幕
 
 	while True: # 工作循环
 		result = requests.get(url).text
