@@ -10,7 +10,7 @@ import json
 import zlib
 
 # 使用前修改此处 --------------------
-room_id = '1029' # 直播间序号
+room_id = '605391' # 直播间序号
 # 使用前修改此处 --------------------
 
 # 发送心跳
@@ -55,20 +55,32 @@ def parse_msg(msg):
 #		print(content)
 		if content["cmd"] == "DANMU_MSG": # 弹幕
 			print_danmu(content)
-#		if content["cmd"] == "SEND_GIFT": # 礼物
-#			print_gift(content)
+		if content["cmd"] == "SEND_GIFT": # 礼物
+			print_gift(content)
 
 # 打印弹幕
+danmu_history = ['', '', ''] # 弹幕历史，只保存弹幕内容不保存用户名 (处理高能时期的群体复读)
 def print_danmu(content):
+	if content["info"][1] in danmu_history: # 若缓存中存在
+		return # 不打印
 	print('# ' + content["info"][2][1]) # 用户名
 	print(content["info"][1]) # 弹幕内容
 	print() # 空行
+	del danmu_history[0] # 清理历史最旧一个
+	danmu_history.append(content["info"][1]) # 插入
 
 # 打印礼物
+gift_history = [('', ''), ('', ''), ('', '')] # 礼物历史，格式 (uname, giftName)
 def print_gift(content):
-	print('$ ' + content["data"]["uname"]) # 用户名
-	print(content["data"]["giftName"]) # 礼物名称
+	info = (content["data"]["uname"], content["data"]["giftName"]) # 提取核心信息
+	if info in gift_history: # 若缓存中存在
+		return # 不打印复读机的礼物
+	print('$ ------------------ $')
+	print(info[0] + '  ' + info[1]) # 用户名和礼物名称
+	print('$ ------------------ $')
 	print() # 空行
+	del gift_history[0] # 清理历史最旧一个
+	gift_history.append(info) # 插入
 
 # 初始化连接
 async def startup(url):
