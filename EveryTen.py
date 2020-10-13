@@ -8,8 +8,9 @@ import requests
 import json
 from time import sleep
 
-def print_list(lis, count):
+def print_list(lis):
 	# 打印弹幕列表，传入参数是列表和需要打印的数目
+	count = len(lis) - 1
 	for entry in lis: # 截取新弹幕部分
 		print(str(count)+'# '+entry["nickname"]+'\n'+entry["text"])
 		count -= 1
@@ -35,8 +36,7 @@ if __name__ == '__main__':
 		# 有新弹幕时进行
 		if diff:
 			# 打印弹幕
-			count = diff - 1 # 弹幕序号 (弹幕从最老的开始打印)
-			print_list(lis[10 - diff: ], count)
+			print_list(lis[10 - diff: ]) # 仅打印更新部分
 			# 后处理
 			last_li = lis # 暂存本次弹幕
 
