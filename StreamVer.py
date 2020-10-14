@@ -4,7 +4,7 @@
 
 # 信息去重功能：缓存最近的几条信息，若重复则不予显示，用于避免被 10 个辣条还要分开送的人刷屏
 
-# 增加信息显示模式设置功能，方便与 GUI 版本兼容
+# 增加信息显示模式设置功能，方便与 GUI 版本兼容，注意可以同时开启多个模式
 
 # 打印内容和格式可自行修改
 
@@ -15,16 +15,16 @@ import zlib
 
 # 使用前修改此处 -------------------- #
 room_id = '1029' # 直播间序号
-display_mode = 'file' # 显示模式 terminal-直接在终端打印 file-保存信息到文件中 gui-传送信息到 gui
+display_mode = ['terminal', 'file'] # 显示模式 terminal-直接在终端打印 file-保存信息到文件中 gui-传送信息到 gui
 # 使用前修改此处 -------------------- #
 
 # 根据显示模式进行相应操作
-if display_mode == 'file':
+if 'file' in display_mode:
 	save_file = open('log.txt', 'w')
 def display(info):
-	if display_mode == 'terminal': # 终端打印
+	if 'terminal' in display_mode: # 终端打印
 		print(info)
-	elif display_mode == 'file': # 文件保存
+	if 'file' in display_mode: # 文件保存
 		save_file.write(info + '\n')
 
 # 发送心跳
@@ -116,5 +116,5 @@ if __name__ == '__main__':
 		asyncio.get_event_loop().run_until_complete(startup(remote)) # 初始化连接
 	except KeyboardInterrupt as exc: # 手动退出
 		display('quitting')
-		if display_mode == 'file': # 文件显示的额外收尾
+		if 'file' in display_mode: # 文件显示的额外收尾
 			save_file.close()
