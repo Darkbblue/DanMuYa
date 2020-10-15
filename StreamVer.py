@@ -15,7 +15,7 @@ import zlib
 import socket
 
 # 使用前修改此处 -------------------- #
-room_id = '40516' # 直播间序号
+room_id = '1029' # 直播间序号
 display_mode = ['terminal', 'gui'] # 显示模式 terminal-直接在终端打印 file-保存信息到文件中 gui-传送信息到 gui
 # 使用前修改此处 -------------------- #
 

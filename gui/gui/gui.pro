@@ -25,13 +25,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+        configwindow.cpp \
         main.cpp \
+        startwindow.cpp \
         widget.cpp
 
 HEADERS += \
+        configwindow.h \
+        startwindow.h \
         widget.h
 
 FORMS += \
+        configwindow.ui \
+        startwindow.ui \
         widget.ui
 
 # Default rules for deployment.

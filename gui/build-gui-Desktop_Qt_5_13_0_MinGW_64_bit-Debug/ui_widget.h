@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QWidget>
 
@@ -22,6 +23,7 @@ class Ui_Widget
 public:
     QGridLayout *gridLayout;
     QTextBrowser *textBrowser;
+    QPushButton *pushButton;
 
     void setupUi(QWidget *Widget)
     {
@@ -44,7 +46,23 @@ public:
         textBrowser->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         textBrowser->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
-        gridLayout->addWidget(textBrowser, 0, 0, 1, 1);
+        gridLayout->addWidget(textBrowser, 1, 0, 1, 1);
+
+        pushButton = new QPushButton(Widget);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(pushButton->sizePolicy().hasHeightForWidth());
+        pushButton->setSizePolicy(sizePolicy);
+        QFont font1;
+        font1.setFamily(QString::fromUtf8("Microsoft YaHei UI"));
+        font1.setPointSize(6);
+        font1.setBold(true);
+        font1.setWeight(75);
+        pushButton->setFont(font1);
+
+        gridLayout->addWidget(pushButton, 0, 0, 1, 1);
 
 
         retranslateUi(Widget);
@@ -55,6 +73,7 @@ public:
     void retranslateUi(QWidget *Widget)
     {
         Widget->setWindowTitle(QCoreApplication::translate("Widget", "\345\274\271\345\271\225\344\270\253", nullptr));
+        pushButton->setText(QCoreApplication::translate("Widget", "Config", nullptr));
     } // retranslateUi
 
 };
