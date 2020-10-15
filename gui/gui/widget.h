@@ -5,7 +5,6 @@
 #include <QTcpSocket>
 #include "startwindow.h"
 #include "configwindow.h"
-#include <QDebug>
 
 namespace Ui {
 class Widget;

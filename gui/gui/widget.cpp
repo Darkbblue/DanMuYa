@@ -49,7 +49,7 @@ void Widget::RcvMsg()
     buffer.append(sock->readAll()); // 获取数据
     while (buffer.length() >= 3) // 切割粘包 (进入循环体后一定有完整包头)
     {
-        int len = (buffer[0] - '0') * 100 + (buffer[1] - '0') * 10 + (buffer[2] - '0'); // 计算包长
+        int len = buffer.left(3).toInt(nullptr, 16); // 计算包长
         if (buffer.length() < len) // 若包不完整，则等待下次接收再处理
             break;
         ui->textBrowser->append(buffer.mid(3, len - 3)); // 打印当前包数据

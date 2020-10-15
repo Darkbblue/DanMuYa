@@ -17,6 +17,7 @@ import socket
 # 使用前修改此处 -------------------- #
 room_id = '1029' # 直播间序号
 display_mode = ['terminal', 'gui'] # 显示模式 terminal-直接在终端打印 file-保存信息到文件中 gui-传送信息到 gui
+port = 12000 # 与 gui 通信所用的本地端口
 # 使用前修改此处 -------------------- #
 
 # 根据显示模式进行相应操作
@@ -24,7 +25,7 @@ if 'file' in display_mode:
 	save_file = open('log.txt', 'w')
 if 'gui' in display_mode:
 	server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-	server.bind(('127.0.0.1', 12000))
+	server.bind(('127.0.0.1', port))
 	server.listen(1)
 	print('waiting for gui')
 	sender, gui_addr = server.accept()
@@ -36,7 +37,7 @@ def display(info):
 		save_file.write(info + '\n')
 	if 'gui' in display_mode: # gui 重定向
 		transport = info.encode('utf-8') # 编码
-		trans_len = str(3+len(transport)) # 计算包头
+		trans_len = str(hex(3+len(transport))[2: ]) # 计算包头
 		while len(trans_len) < 3: # 补齐空位
 			trans_len = '0' + trans_len
 		sender.send(trans_len.encode('utf-8')+transport) # 发送信息
