@@ -28,6 +28,7 @@ public:
         if (Widget->objectName().isEmpty())
             Widget->setObjectName(QString::fromUtf8("Widget"));
         Widget->resize(400, 300);
+        Widget->setStyleSheet(QString::fromUtf8(""));
         gridLayout = new QGridLayout(Widget);
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
@@ -35,10 +36,13 @@ public:
         textBrowser = new QTextBrowser(Widget);
         textBrowser->setObjectName(QString::fromUtf8("textBrowser"));
         QFont font;
+        font.setFamily(QString::fromUtf8("Microsoft YaHei"));
         font.setPointSize(10);
         font.setBold(true);
         font.setWeight(75);
         textBrowser->setFont(font);
+        textBrowser->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        textBrowser->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
         gridLayout->addWidget(textBrowser, 0, 0, 1, 1);
 
@@ -50,7 +54,7 @@ public:
 
     void retranslateUi(QWidget *Widget)
     {
-        Widget->setWindowTitle(QCoreApplication::translate("Widget", "DanMuYa", nullptr));
+        Widget->setWindowTitle(QCoreApplication::translate("Widget", "\345\274\271\345\271\225\344\270\253", nullptr));
     } // retranslateUi
 
 };

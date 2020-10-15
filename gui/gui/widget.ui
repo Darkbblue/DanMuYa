@@ -11,17 +11,27 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>DanMuYa</string>
+   <string>弹幕丫</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
     <widget class="QTextBrowser" name="textBrowser">
      <property name="font">
       <font>
+       <family>Microsoft YaHei</family>
        <pointsize>10</pointsize>
        <weight>75</weight>
        <bold>true</bold>
       </font>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
      </property>
     </widget>
    </item>

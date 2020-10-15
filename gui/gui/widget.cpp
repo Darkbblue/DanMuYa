@@ -6,8 +6,14 @@ Widget::Widget(QWidget *parent) :
     ui(new Ui::Widget)
 {
     ui->setupUi(this);
-    setWindowOpacity(0.85); // 透明度设置
+
+    // 外观设置
+    setWindowOpacity(0.85); // 透明度
     setWindowFlags(windowFlags() | Qt::WindowStaysOnTopHint); // 窗口置顶
+    this->setStyleSheet("background-color: #272822"); // 整体背景色
+    ui->textBrowser->setStyleSheet("border-width: 0; border-style: outset; color: white"); // 文字
+
+    // 通信初始化
     sock = new QTcpSocket(this);
     sock->connectToHost("127.0.0.1", 12000); // 本机中转端口
     connect(sock, &QTcpSocket::readyRead, this, &Widget::RcvMsg);
