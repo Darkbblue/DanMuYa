@@ -13,12 +13,16 @@ from aiowebsocket.converses import AioWebSocket # WebSocket
 import json
 import zlib
 import socket
+import re
 
-# 使用前修改此处 -------------------- #
+# -------------------- 使用前修改此处 -------------------- #
 room_id = '1029' # 直播间序号
-display_mode = ['terminal', 'gui'] # 显示模式 terminal-直接在终端打印 file-保存信息到文件中 gui-传送信息到 gui
+display_mode = ['terminal', 'file'] # 显示模式 terminal-直接在终端打印 file-保存信息到文件中 gui-传送信息到 gui
 port = 12000 # 与 gui 通信所用的本地端口
-# 使用前修改此处 -------------------- #
+# 弹幕屏蔽正则列表，若有需要则手动添加
+blocking = []
+# blocking.append(re.compile(r'我', re.S)) # 这是一个示例，去掉注释后可以看得更加清楚
+# -------------------- 使用前修改此处 -------------------- #
 
 # 根据显示模式进行相应操作
 if 'file' in display_mode:
@@ -92,10 +96,13 @@ danmu_history = ['', '', ''] # 弹幕历史，只保存弹幕内容不保存用�
 def print_danmu(content):
 	if content["info"][1] in danmu_history: # 若缓存中存在
 		return # 不打印
+	for exp in blocking: # 遍历屏蔽正则列表
+		if re.search(exp, content["info"][1]): # 若匹配
+			return # 不打印
 	display('# ' + content["info"][2][1]) # 用户名
 	display(content["info"][1]) # 弹幕内容
 	display('') # 空行
-	del danmu_history[0] # 清理历史最旧一个
+	del danmu_history[0] # 清理历史最旧的一个
 	danmu_history.append(content["info"][1]) # 插入
 
 # 打印礼物
@@ -108,7 +115,7 @@ def print_gift(content):
 	display(info[0] + '  ' + info[1]) # 用户名和礼物名称
 	display('$ ------------------ $')
 	display('') # 空行
-	del gift_history[0] # 清理历史最旧一个
+	del gift_history[0] # 清理历史最旧的一个
 	gift_history.append(info) # 插入
 
 # 初始化连接
