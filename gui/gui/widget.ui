@@ -17,7 +17,7 @@
    <string notr="true"/>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="1" column="0">
+   <item row="2" column="0">
     <widget class="QTextBrowser" name="textBrowser">
      <property name="font">
       <font>
@@ -53,6 +53,21 @@
      </property>
      <property name="text">
       <string>Config</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QPushButton" name="pushButton_2">
+     <property name="font">
+      <font>
+       <family>Microsoft YaHei</family>
+       <pointsize>6</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Reconnect</string>
      </property>
     </widget>
    </item>

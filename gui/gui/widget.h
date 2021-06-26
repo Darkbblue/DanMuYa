@@ -29,6 +29,8 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void on_pushButton_2_clicked();
+
 private:
     Ui::Widget *ui;
     QTcpSocket * sock; // 通信
@@ -38,6 +40,9 @@ private:
 
     double alpha = 0.85; // 透明度
     int fontSize = 10; // 字号
+
+    int port; // 本地连接端口号
+    bool initConnect = true; // 初始化连接
 };
 
 #endif // WIDGET_H

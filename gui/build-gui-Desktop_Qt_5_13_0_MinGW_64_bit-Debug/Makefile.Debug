@@ -443,6 +443,7 @@ debug/moc_widget.cpp: ../gui/widget.h \
 		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtNetwork/qtnetwork-config.h \
 		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtNetwork/qabstractsocket.h \
 		../gui/startwindow.h \
+		../gui/configwindow.h \
 		debug/moc_predefs.h \
 		E:/Softwares/Codes/QT/5.13.0/mingw73_64/bin/moc.exe
 	E:\Softwares\Codes\QT\5.13.0\mingw73_64\bin\moc.exe $(DEFINES) --include "D:/Work/~Index/2020.10.11 LiveCrawler/DanMuYa/gui/build-gui-Desktop_Qt_5_13_0_MinGW_64_bit-Debug/debug/moc_predefs.h" -IE:/Softwares/Codes/QT/5.13.0/mingw73_64/mkspecs/win32-g++ -I"D:/Work/~Index/2020.10.11 LiveCrawler/DanMuYa/gui/gui" -IE:/Softwares/Codes/QT/5.13.0/mingw73_64/include -IE:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtWidgets -IE:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtGui -IE:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtANGLE -IE:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtNetwork -IE:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtCore -I. -IE:/Softwares/Codes/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IE:/Softwares/Codes/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IE:/Softwares/Codes/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IE:/Softwares/Codes/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IE:/Softwares/Codes/QT/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IE:/Softwares/Codes/QT/Tools/mingw730_64/x86_64-w64-mingw32/include ..\gui\widget.h -o debug\moc_widget.cpp
@@ -582,7 +583,35 @@ debug/configwindow.o: ../gui/configwindow.cpp ../gui/configwindow.h \
 		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtCore/qfiledevice.h \
 		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtGui/qvector2d.h \
 		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtGui/qtouchdevice.h \
-		ui_configwindow.h
+		ui_configwindow.h \
+		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtCore/QVariant \
+		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtWidgets/QApplication \
+		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtWidgets/qapplication.h \
+		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtCore/qcoreapplication.h \
+		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtCore/qeventloop.h \
+		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtWidgets/qdesktopwidget.h \
+		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtGui/qguiapplication.h \
+		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtGui/qinputmethod.h \
+		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtWidgets/QHBoxLayout \
+		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtWidgets/qboxlayout.h \
+		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtWidgets/qlayout.h \
+		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtWidgets/qlayoutitem.h \
+		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtWidgets/qgridlayout.h \
+		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtWidgets/QLabel \
+		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtWidgets/qlabel.h \
+		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtWidgets/qframe.h \
+		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtWidgets/QLineEdit \
+		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtWidgets/qlineedit.h \
+		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtGui/qtextcursor.h \
+		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtGui/qtextformat.h \
+		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtGui/qpen.h \
+		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtGui/qtextoption.h \
+		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtWidgets/QPushButton \
+		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtWidgets/qpushbutton.h \
+		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtWidgets/qabstractbutton.h \
+		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtGui/qicon.h \
+		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtWidgets/QSpacerItem \
+		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtWidgets/QVBoxLayout
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\configwindow.o ..\gui\configwindow.cpp
 
 debug/main.o: ../gui/main.cpp ../gui/widget.h \
@@ -695,6 +724,7 @@ debug/main.o: ../gui/main.cpp ../gui/widget.h \
 		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtNetwork/qtnetwork-config.h \
 		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtNetwork/qabstractsocket.h \
 		../gui/startwindow.h \
+		../gui/configwindow.h \
 		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtWidgets/QApplication \
 		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtWidgets/qapplication.h \
 		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtCore/qcoreapplication.h \
@@ -947,12 +977,9 @@ debug/widget.o: ../gui/widget.cpp ../gui/widget.h \
 		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtNetwork/qtnetwork-config.h \
 		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtNetwork/qabstractsocket.h \
 		../gui/startwindow.h \
+		../gui/configwindow.h \
 		ui_widget.h \
 		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtCore/QVariant \
-		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtWidgets/QAction \
-		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtWidgets/qaction.h \
-		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtGui/qicon.h \
-		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtWidgets/qactiongroup.h \
 		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtWidgets/QApplication \
 		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtWidgets/qapplication.h \
 		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtCore/qcoreapplication.h \
@@ -965,6 +992,10 @@ debug/widget.o: ../gui/widget.cpp ../gui/widget.h \
 		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtWidgets/qlayout.h \
 		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtWidgets/qlayoutitem.h \
 		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtWidgets/qboxlayout.h \
+		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtWidgets/QPushButton \
+		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtWidgets/qpushbutton.h \
+		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtWidgets/qabstractbutton.h \
+		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtGui/qicon.h \
 		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtWidgets/QTextBrowser \
 		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtWidgets/qtextbrowser.h \
 		E:/Softwares/Codes/QT/5.13.0/mingw73_64/include/QtWidgets/qtextedit.h \

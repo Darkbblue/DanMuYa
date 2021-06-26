@@ -41,7 +41,12 @@ Widget::~Widget()
 void Widget::StartConnection(int port) // 开始连接
 {
     sock->connectToHost("127.0.0.1", port); // 本机中转端口
-    connect(sock, &QTcpSocket::readyRead, this, &Widget::RcvMsg);
+    if (initConnect)
+    {
+        connect(sock, &QTcpSocket::readyRead, this, &Widget::RcvMsg);
+        initConnect = false;
+        this->port = port;
+    }
 }
 
 void Widget::RcvMsg()
@@ -81,4 +86,9 @@ void Widget::SetFont(QString str) // 设置字号
 void Widget::on_pushButton_clicked()
 {
     configWindow->show();
+}
+
+void Widget::on_pushButton_2_clicked()
+{
+    StartConnection(port);
 }

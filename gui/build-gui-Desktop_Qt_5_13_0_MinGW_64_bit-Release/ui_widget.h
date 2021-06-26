@@ -24,6 +24,7 @@ public:
     QGridLayout *gridLayout;
     QTextBrowser *textBrowser;
     QPushButton *pushButton;
+    QPushButton *pushButton_2;
 
     void setupUi(QWidget *Widget)
     {
@@ -46,7 +47,7 @@ public:
         textBrowser->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         textBrowser->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
-        gridLayout->addWidget(textBrowser, 1, 0, 1, 1);
+        gridLayout->addWidget(textBrowser, 2, 0, 1, 1);
 
         pushButton = new QPushButton(Widget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
@@ -64,6 +65,17 @@ public:
 
         gridLayout->addWidget(pushButton, 0, 0, 1, 1);
 
+        pushButton_2 = new QPushButton(Widget);
+        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+        QFont font2;
+        font2.setFamily(QString::fromUtf8("Microsoft YaHei"));
+        font2.setPointSize(6);
+        font2.setBold(true);
+        font2.setWeight(75);
+        pushButton_2->setFont(font2);
+
+        gridLayout->addWidget(pushButton_2, 1, 0, 1, 1);
+
 
         retranslateUi(Widget);
 
@@ -74,6 +86,7 @@ public:
     {
         Widget->setWindowTitle(QCoreApplication::translate("Widget", "\345\274\271\345\271\225\344\270\253", nullptr));
         pushButton->setText(QCoreApplication::translate("Widget", "Config", nullptr));
+        pushButton_2->setText(QCoreApplication::translate("Widget", "Reconnect", nullptr));
     } // retranslateUi
 
 };
