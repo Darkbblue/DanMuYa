@@ -16,7 +16,7 @@ import socket
 import re
 
 # -------------------- 使用前修改此处 -------------------- #
-room_id = '1029' # 直播间序号
+room_id = '924403'#'1029' # 直播间序号
 display_mode = ['terminal', 'file'] # 显示模式 terminal-直接在终端打印 file-保存信息到文件中 gui-传送信息到 gui
 port = 12000 # 与 gui 通信所用的本地端口
 # 弹幕屏蔽正则列表，若有需要则手动添加
